@@ -1,2 +1,1 @@
-# owasp-top-ten
-Python project for flashcards of the OWASP Top Ten
+[Project Requirements](https://git.generalassemb.ly/dc-wdi-python-django/python-command-line-project)
