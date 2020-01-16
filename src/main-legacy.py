@@ -52,10 +52,10 @@ soup = BeautifulSoup(page.content, 'html.parser')
 #Success!
 headings = soup.select('h')
 texts = soup.select('p')
-# urls = soup.select('a')
+urls = soup.select('a')
 
-# for u in urls:
-#     print(u)
+for u in urls:
+    print(u)
 
 for h in headings:
     print(h)

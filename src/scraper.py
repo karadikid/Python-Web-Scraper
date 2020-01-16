@@ -21,9 +21,14 @@ text_tag = "p"
 # Link TAG
 link_tag = "a"
 
+# Results objects
+headings = []
+text = []
+links = []
+
 # Request object
 try:
-    page = requests.get(splash_url,timeout=3)
+    page = requests.get(target,timeout=3)
     page.raise_for_status()
 except requests.exceptions.HTTPError as errh:
     print ("Http Error:",errh)
@@ -39,23 +44,26 @@ soup = BeautifulSoup(page.content, 'html.parser')
 
 # Select Elements
 # Select Headings
-headings = soup.select(heading_tag)
+headings = soup.select(f"{heading_tag}")
 
 # Select Text TAG
-texts = soup.select(text_tag)
+texts = soup.select(f"{text_tag}")
 
 # Select Link TAG
-links = soup.select(link_tag)
+links = soup.select(f"{link_tag}")
 
 ## Print Elements
 # URLs
-for u in links:
-    print(u)
+for l in links:
+    links.append(l)
+    print(l)
 
 ## Headings
 for h in headings:
+    headings.append(h)
     print(h)
 
 ### Text
 for t in texts:
+    texts.append(t)
     print(t)
