@@ -9,9 +9,9 @@ from bs4 import BeautifulSoup
 # Docker command docker run -p 8050:8050 -p 5023:5023 scrapinghub/splash
 # New URL http://localhost:8050/render.html?url=http://example.com/
 
-# target = "https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_Top_10.html"
+target = "https://owasp.org/www-project-top-ten/"
 # target ="https://gamefaqs.gamespot.com/top10/3133-the-top-10-most-psychotic-characters-in-gaming"
-target = "http://yoga.ommygod.com"
+# target = "http://yoga.ommygod.com"
 # target = "https://www.centurymartialarts.com/shop/weapons/kamas/"
 newURL = f"http://localhost:8050/render.html?url={target}"
 
@@ -50,7 +50,7 @@ soup = BeautifulSoup(page.content, 'html.parser')
 #     print(t)
 
 #Success!
-headings = soup.select('h')
+headings = soup.select('h3')
 texts = soup.select('p')
 urls = soup.select('a')
 

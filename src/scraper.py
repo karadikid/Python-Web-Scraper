@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 
 # URLS
 # Target URL to scrape
-target_url="https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_Top_10.html"
+target_url="https://owasp.org/www-project-top-ten/"
 
 # Splash URL from docker local container including port
 splash_url = "http://localhost:8050/render.html?url="
@@ -16,15 +16,10 @@ target = f"{splash_url}{target_url}"
 heading_tag = "h3"
 
 # Text TAG
-text_tag = "p"
+text_tag = "li"
 
 # Link TAG
-link_tag = "a"
-
-# Results objects
-headings = []
-text = []
-links = []
+link_tag = "li a"
 
 # Request object
 try:
@@ -43,27 +38,24 @@ except requests.exceptions.RequestException as err:
 soup = BeautifulSoup(page.content, 'html.parser')
 
 # Select Elements
-# Select Headings
+# Select Headings Object
 headings = soup.select(f"{heading_tag}")
 
-# Select Text TAG
+# Select Text TAG Object
 texts = soup.select(f"{text_tag}")
 
-# Select Link TAG
+# Select Link TAG Object
 links = soup.select(f"{link_tag}")
 
 ## Print Elements
 # URLs
-for l in links:
-    links.append(l)
-    print(l)
+# for l in links:
+#     print(l)
 
 ## Headings
-for h in headings:
-    headings.append(h)
-    print(h)
+# for h in headings:
+#     print(h)
 
 ### Text
-for t in texts:
-    texts.append(t)
-    print(t)
+# for t in texts:
+#     print(t)
