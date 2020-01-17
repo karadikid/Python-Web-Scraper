@@ -22,10 +22,10 @@ class Scrape(BaseModel):
 
 class Results(BaseModel):
     url = CharField()
-    text_tag = CharField()
-    headings = CharField()
-    text = CharField()
-    links = CharField()
+    text_tag = CharField(null = True)
+    headings = CharField(max_length=30000)
+    text = CharField(max_length=30000)
+    links = CharField(max_length=30000)
 
 # Connect to database
 db.connect()
