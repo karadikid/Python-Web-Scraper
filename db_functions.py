@@ -14,14 +14,13 @@ def create_result(url, tag, headings, text, links):
 
 # Read: (.get() and .select()) get = 1 record, select = multiple
 def get_scrape(url):
-    result = data_model.Scrape.get(data_model.Scrape.url == url)
-    print(result)
+    select_query = data_model.Scrape.select().where(data_model.Scrape.url == url)
+    result = select_query.execute
     return result
 
 def select_results(url):
-    results = data_model.Results.select(data_model.Results.url == url)
-    for result in results:
-        print(result)
+    select_query = data_model.Results.select().where(data_model.Results.url == url)
+    results = select_query.execute
     return results
 
 # Update
@@ -41,7 +40,7 @@ def print_scrape(url):
     return
 
 def print_records(url):
-    results = select_results(url)
+    results = select_results(url)    
     print(results)
     return
 
