@@ -38,14 +38,17 @@ def get_soup(page):
 # Heading TAG
 def choose_heading_tag(heading_tag):
     heading_tag = "h3"
+    return heading_tag
 
 # Text TAG
 def choose_text_tag(text_tag):
     text_tag = "li"
+    return text_tag
 
 # Link TAG
 def choose_link_tag(link_tag):
     link_tag = "li a"
+    return link_tag
 
 # Select Elements
 # Select Headings Object

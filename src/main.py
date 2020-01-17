@@ -3,8 +3,8 @@ import scraper
 
 @click.command()
 @click.option('--h_tag', default="h3", help='Heading TAG Number, default h3')
-@click.option('--link_tag', default="li a", help='Link TAG, default a')
-@click.option('--text_tag', default="li", help='Text TAG, default p')
+@click.option('--link_tag', default="li a", help='Link TAG, default li a')
+@click.option('--text_tag', default="li", help='Text TAG, default li')
 @click.option('--target', default="https://owasp.org/www-project-top-ten/",
               help='URL to scrape, default https://owasp.org/www-project-top-ten/')
 
