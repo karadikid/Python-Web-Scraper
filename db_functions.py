@@ -36,11 +36,13 @@ def delete_scrape(url):
 # Print results
 def print_scrape(url):
     scrape = get_scrape(url)
-    print(scrape)
+    for s in scrape:
+        print(scrape)
     return
 
 def print_records(url):
-    results = select_results(url)    
-    print(results)
+    results = select_results(url)
+    for r in results:
+        print(results)
     return
 
