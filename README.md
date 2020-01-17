@@ -1,11 +1,29 @@
-# OWASP Top Ten Flashcards Project
+# Python Web Scraper
+This application uses Python to scrape a url.  The user can offer multiple option including the URL, at <TAG> for Headings, Text, and Links respectively.  If entered with zero options it uses defaults.  The application also inserts the records into an SQL database for searching or printing.  By default it scrapes the URL from a local proxy named "Splash" from ScrapingHub and the selects the results sets for both the scrapes settings and scrape results.
 
-## Flash cards
-1. A user should be able to create new cards. 
-1. They should be able to set up a training session
-1. Pick the number of cards they'd like to review and then see that many cards
-1. For each card, they should be presented with the "front" and then asked for the "back"
-1. Keep track of how many times a card has been answered correctly and incorrectly.
+```
+❯ python main.py --help
+Usage: main.py [OPTIONS]
+
+  A Program to Scrape a website
+
+Options:
+  --h_tag TEXT       Heading TAG Number, default h3
+  --link_tag TEXT    Link TAG, default a
+  --text_tag TEXT    Text TAG, default p
+  --target_url TEXT  URL to scrape, default https://owasp.org/www-project-top-
+                     ten/
+  --help             Show this message and exit.
+
+❯ python main.py --h_tag h3 --link_tag=a --text_tag=p --target_url https://gamefaqs.gamespot.com/top10/3133-the-top-10-most-psychotic-characters-in-gaming
+```
+
+## Technologies
+1. Python3
+1. Requests
+1. BeautifulSoup
+1. Click
+1. peewee and psycopg2
 
 ## Bonus
 
