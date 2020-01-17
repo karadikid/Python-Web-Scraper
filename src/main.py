@@ -3,28 +3,22 @@ import scraper
 
 @click.command()
 @click.option('--h_tag', default="h3", help='Heading TAG Number, default h3')
-@click.option('--link_tag', default="a", help='Link TAG, default a')
-@click.option('--text', default="li", help='Text TAG, default p')
-@click.option('--url', default="p",
+@click.option('--link_tag', default="li a", help='Link TAG, default a')
+@click.option('--text_tag', default="li", help='Text TAG, default p')
+@click.option('--target', default="https://owasp.org/www-project-top-ten/",
               help='URL to scrape, default https://owasp.org/www-project-top-ten/')
-def scrape(count, name):
+
+def scrape(target, h_tag, text_tag, target):
     """A Program to Scrape a website"""
-    for x in range(count):
-        click.echo('Hello %s!' % name)
+    target = scraper.create_target(target)
+    page = scraper.get_page(target)
+    soup = scraper.get_soup(page)
+    headings = scraper.get_heading(soup, h_tag)
+    texts = scraper.get_texts(soup, text)
+    links = scraper.get_links(soup, link_tag)
+    scraper.print_headings(headings)
+    scraper.print_text(texts)
+    scraper.print_links(links)
 
 if __name__ == '__main__':
-    hello()
-
-import click
-
-@click.command()
-@click.option('--count', default=1, help='Number of greetings.')
-@click.option('--name', prompt='Your name',
-              help='The person to greet.')
-def hello(count, name):
-    """Simple program that greets NAME for a total of COUNT times."""
-    for x in range(count):
-        click.echo('Hello %s!' % name)
-
-if __name__ == '__main__':
-    hello()
+    scrape()

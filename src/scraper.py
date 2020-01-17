@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-# URLS
+# DEFAULT URLs
 # Target URL to scrape
 target_url="https://owasp.org/www-project-top-ten/"
 
@@ -9,53 +9,72 @@ target_url="https://owasp.org/www-project-top-ten/"
 splash_url = "http://localhost:8050/render.html?url="
 
 # target splash_url+target_url
-target = f"{splash_url}{target_url}"
+
+def create_target(target_url, splash_url="http://localhost:8050/render.html?url="):
+    target = f"{splash_url}{target_url}"
+    return target
+
+# Request object
+def get_page(target):
+    try:
+        page = requests.get(target,timeout=3)
+        page.raise_for_status()
+    except requests.exceptions.HTTPError as errh:
+        print ("Http Error:",errh)
+    except requests.exceptions.ConnectionError as errc:
+        print ("Error Connecting:",errc)
+    except requests.exceptions.Timeout as errt:
+        print ("Timeout Error:",errt)
+    except requests.exceptions.RequestException as err:
+        print ("Oops: Something Else",err)
+    return page
+
+# soup object
+def get_soup(page):
+    soup = BeautifulSoup(page.content, 'html.parser')
+    return soup
 
 # TAG Arguments
 # Heading TAG
-heading_tag = "h3"
+def choose_heading_tag(heading_tag):
+    heading_tag = "h3"
 
 # Text TAG
-text_tag = "li"
+def choose_text_tag(text_tag):
+    text_tag = "li"
 
 # Link TAG
-link_tag = "li a"
-
-# Request object
-try:
-    page = requests.get(target,timeout=3)
-    page.raise_for_status()
-except requests.exceptions.HTTPError as errh:
-    print ("Http Error:",errh)
-except requests.exceptions.ConnectionError as errc:
-    print ("Error Connecting:",errc)
-except requests.exceptions.Timeout as errt:
-    print ("Timeout Error:",errt)
-except requests.exceptions.RequestException as err:
-    print ("Oops: Something Else",err)
-
-# soup object
-soup = BeautifulSoup(page.content, 'html.parser')
+def choose_link_tag(link_tag):
+    link_tag = "li a"
 
 # Select Elements
 # Select Headings Object
-headings = soup.select(f"{heading_tag}")
+def get_heading(soup, heading_tag):
+    headings = soup.select(f"{heading_tag}")
+    return headings
 
 # Select Text TAG Object
-texts = soup.select(f"{text_tag}")
-
+def get_texts(soup, text_tag):
+    texts = soup.select(f"{text_tag}")
+    return texts
 # Select Link TAG Object
-links = soup.select(f"{link_tag}")
+def get_links(soup, link_tag):
+    links = soup.select(f"{link_tag}")
+    return links
+
 
 ## Print Elements
 # URLs
-# for l in links:
-#     print(l)
+def print_links(links):
+    for l in links:
+        print(l)
 
 ## Headings
-# for h in headings:
-#     print(h)
+def print_headings(headings):
+    for h in headings:
+        print(h)
 
 ### Text
-# for t in texts:
-#     print(t)
+def print_text(texts):
+    for t in texts:
+        print(t)
