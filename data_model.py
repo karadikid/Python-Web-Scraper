@@ -1,5 +1,5 @@
 from peewee import *
-from datetime import date
+from datetime import date, datetime
 
 #Database.connect
 db = PostgresqlDatabase('Scraper', user='postgres', 
@@ -14,7 +14,7 @@ class BaseModel(Model):
 # Database table properties
 class Scrape(BaseModel):
     id = IdentityField()
-    timestamp = DateTimeField()
+    timestamp = DateTimeField(default=datetime.now)
     url = CharField()
     heading_tag = CharField()
     text_tag = CharField()
