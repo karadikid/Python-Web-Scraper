@@ -42,12 +42,12 @@ def choose_heading_tag(heading_tag):
 
 # Text TAG
 def choose_text_tag(text_tag):
-    text_tag = "li"
+    text_tag = "p"
     return text_tag
 
 # Link TAG
 def choose_link_tag(link_tag):
-    link_tag = "li a"
+    link_tag = "a"
     return link_tag
 
 # Select Elements

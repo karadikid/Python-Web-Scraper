@@ -7,8 +7,8 @@ def create_scrape(url, heading_tag, text_tag, link_tag):
     scrape_record.save()
     return scrape_record
 
-def create_result(url, headings, text, links):
-    result_record = data_model.Results(url=url, headings=headings, text=text, links=links)
+def create_result(url, tag, headings, text, links):
+    result_record = data_model.Results(url=url, tag=tag, headings=headings, text=text, links=links)
     result_record.save()
     return result_record
 
