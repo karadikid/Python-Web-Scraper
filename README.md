@@ -1,6 +1,28 @@
 # Python Web Scraper
 This application uses Python to scrape a url.  The user can offer multiple option including the URL, at <TAG> for Headings, Text, and Links respectively.  If entered with zero options it uses defaults.  The application also inserts the records into an SQL database for searching or printing.  By default it scrapes the URL from a local proxy named "Splash" from ScrapingHub and the selects the results sets for both the scrapes settings and scrape results.
 
+## Docker Configuration
+This is optional, if not using Docker, change splash_url from Scraper.py to "".
+
+*No Docker*
+```python
+splash_url = ""
+```
+### Docker Install
+```
+brew cask install docker
+```
+### First Time Run
+Got to Spotlight by pressing "Command + Space" on OSX and typing 'Docker'
+Accept elevated privileges for the Docker Engine and Networking Agent
+Open Terminal Window and Run:
+
+### Docker Image Pull and Launch
+```
+docker pull scrapinghub/splash && docker run -p 8050:8050 -p 5023:5023 scrapinghub/splash
+```
+## Python Run
+
 ```
 ❯ python main.py --help
 Usage: main.py [OPTIONS]
@@ -24,6 +46,7 @@ Options:
 1. BeautifulSoup
 1. Click
 1. peewee and psycopg2
+1. Docker
 
 ## Bonus
 
