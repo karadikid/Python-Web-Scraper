@@ -30,7 +30,7 @@ def scrape(h_tag, link_tag, text_tag, target_url):
 
     # # Print Tests DELETE
     # scraper.print_headings(headings)
-    # scraper.print_text(text)
+    # scraper.print_text(texts)
     # scraper.print_links(links)
 
 if __name__ == '__main__':
