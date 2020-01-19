@@ -62,6 +62,7 @@ Options:
 1. Click
 1. peewee and psycopg2
 1. Docker
+1. Postgresql
 
 ## Bonus
 
