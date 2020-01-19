@@ -21,6 +21,21 @@ Open Terminal Window and Run:
 ```
 docker pull scrapinghub/splash && docker run -p 8050:8050 -p 5023:5023 scrapinghub/splash
 ```
+### Postgres SQL Install and Configuration
+Install
+```
+brew install postgresql
+```
+Services Start/Stop
+```
+brew services start postgresql
+brew services stop postgresql.
+```
+Create Database for Scraping
+```
+createdb Scraper
+```
+
 ## Python Run
 
 ```
