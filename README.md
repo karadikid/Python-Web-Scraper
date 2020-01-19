@@ -35,6 +35,22 @@ Create Database for Scraping
 ```
 createdb Scraper
 ```
+To initialize database, uncomment the code in data_model.py
+```python
+# data_model.py
+# Function for initialization
+db_initialize()
+```
+From Terminal run
+```
+python data_model.py
+```
+Then recomment out the initialize command.
+```
+# data_model.py
+# Function for initialization
+# db_initialize()
+```
 
 ## Python Run
 

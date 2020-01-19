@@ -54,4 +54,5 @@ def db_create_table(table_name):
     db.create_tables([table_name])
     return 
 
-db_initialize()
+# Function for initialization
+# db_initialize()
