@@ -14,7 +14,7 @@ brew cask install docker
 ```
 ### First Time Run
 Got to Spotlight by pressing "Command + Space" on OSX and typing 'Docker'
-Accept elevated privileges for the Docker Engine and Networking Agent
+Accept elevated privileges for the Docker Engine and Networking Agent.
 Open Terminal Window and Run:
 
 ### Docker Image Pull and Launch
@@ -29,7 +29,7 @@ brew install postgresql
 Services Start/Stop
 ```
 brew services start postgresql
-brew services stop postgresql.
+brew services stop postgresql
 ```
 Create Database for Scraping
 ```
