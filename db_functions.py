@@ -29,7 +29,12 @@ def update_scrape(url):
 
 # Delete
 def delete_scrape(url):
-    delete_query = data_model.Scrape.delete().where(data_model.Scrape.url == url)
+    delete_query = data_model.Scrape.delete().where(data_model.Scrape.url == url).execute()
+    return delete_query
+
+def delete_results(url):
+    delete_results = data_model.Results.delete().where(data_model.Results.url == url).execute()
+    return delete_results
 
 # Print results
 def print_scrape(url):
