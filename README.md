@@ -80,13 +80,4 @@ Options:
 1. Docker
 1. Postgresql
 
-## Bonus
-
-Once you have the command line version working consider the following bonuses:
-
-1. Get Update and Delete working
-1. Build a user interface with [tkinter](https://docs.python.org/3/library/tk.html), [pygame](https://www.pygame.org/), or [PySimpleGUI](https://pysimplegui.readthedocs.io/en/latest/)
-1. Use web scraping to pull data from a webpage using [requests](https://2.python-requests.org/en/master/) and [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-
-[Project Requirements](https://git.generalassemb.ly/dc-wdi-python-django/python-command-line-project)
 
